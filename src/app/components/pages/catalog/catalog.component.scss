@@ -1,0 +1,37 @@
+.tea-collection {
+
+  max-width: 1400px;
+  margin: 72px auto 0;
+
+}
+.tea-collection-items {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  
+}
+
+tea-card {
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+// .tea-collection-items {
+//   margin-top: 50px;
+//   display: flex;
+//   justify-content:space-around;
+//   align-items: center;
+//   flex-wrap: wrap;
+// }
+
+// .tea-card {
+// width: 30%;
+
+//   margin-bottom: 20px; /* Отступ между рядами */
+// }
+
+
+

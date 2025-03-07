@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+
+}
+
+.navbar {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.btn.my-style__btn-card {
+  width: 170px;
+  height: 38px;
+  border-radius: 4px ;
+  color: #ffffff;
+  background: #076bff;
+  margin-bottom: 20px;
+}
+.btn.my-style__btn-card:hover {
+  background: #0a59cf; ;
+  color: #ffffff;
+}
+
+// .my-style__btn {
+//   border: 1px solid #007bff;
+
+//   background: transparent;
+//   color: #007bff;
+//   width: 100px;
+//   height: 36px;
+// }
+
+// .my-style__btn:hover {
+//   background: #007bff;
+// }
+
+.slider-tea {
+  margin-top: 72px;
+}
+
+.tea-carrousel > img {
+  max-height: 640px;
+  position: relative;
+}
+
+
+.tea-carrousel img {
+  width: 100%;
+}
+
+.h1 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+.h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+
+.faque {
+  margin-top: 72px;
+}
+
+.h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+
+}
+
+#alluring-top {
+  color: rgb(111, 0, 255);
+}
+#accordionPanelsStayOpenExample .accordion  {
+  max-width: 856px;
+  margin: 50px auto 0;
+}
+.accordion-button.my-style__accordion-button {
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(360deg, #076bff 0%, #007bff 100%);
+  border-radius: 10px;
+  height: 69px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.accordion-button::after {
+  content: none;
+}
+
+// .my-style__accordion-button::after {
+//   // content: url(../src/assets/images/down.svg);
+//   // color: #ffffff;
+
+// }
+
+.form {
+  margin-top: 72px;
+}
+
+#order-form {
+  max-width: 636px;
+  margin: 60px auto 48px auto;
+}
+
+.form-label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+  color: #000000;
+}
+
+.navbar-brand {
+  max-width: 100px;
+  height: auto;
+
+}
+.card-img-top {
+  cursor: pointer;
+
+}
+
+.fullScreenImage {
+
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    z-index: 9999;
+
+
+}
+
+
+

@@ -1,0 +1,13 @@
+<section class="tea-collection">
+  <h1 class="h1 ">Наши чайные коллекции</h1>
+  <div class="tea-collection-items ">
+
+
+<tea-card *ngFor="let teaCard of teaCatalog" [teaCard]="teaCard" class="tea-card" ></tea-card>
+
+
+  </div>
+<app-loader [isLoading]="isLoading" ></app-loader>
+
+
+</section>
