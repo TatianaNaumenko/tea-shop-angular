@@ -1,3 +1,4 @@
+import { TaaSearchService } from './services/taa-search.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +11,7 @@ import { MainComponent } from './components/pages/main/main.component';
 import { CatalogComponent } from './components/pages/catalog/catalog.component';
 import { CreateOrderComponent } from './components/pages/create-order/create-order.component';
 import { TeaDetailsComponent } from './components/pages/tea-details/tea-details.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { PopupComponent } from './components/common/popup/popup.component';
 import { LoaderComponent } from './components/common/loader/loader.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -43,7 +44,8 @@ import { TeaDataService } from './services/tea-data.service';
   ],
   providers: [
     TeaCatalogService,
-    TeaDataService
+    TeaDataService,
+    TaaSearchService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,7 @@
 .tea-collection {
 
   max-width: 1400px;
-  margin: 72px auto 0;
+  margin: 72px auto 25px;
 
 }
 .tea-collection-items {
@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  
+
 }
 
 tea-card {
@@ -19,19 +19,7 @@ tea-card {
   height: 100%;
 }
 
-// .tea-collection-items {
-//   margin-top: 50px;
-//   display: flex;
-//   justify-content:space-around;
-//   align-items: center;
-//   flex-wrap: wrap;
-// }
 
-// .tea-card {
-// width: 30%;
-
-//   margin-bottom: 20px; /* Отступ между рядами */
-// }
 
 
 

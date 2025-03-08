@@ -2,11 +2,15 @@
   margin: 0;
   padding: 0;
 }
-
-body {
-  font-family: "Arial", sans-serif;
-
+html, body {
+  height: 100%;
+  margin: 0;
 }
+// body {
+
+//   display: flex;
+//     flex-direction: column;
+// }
 
 .navbar {
   font-size: 16px;
@@ -27,18 +31,7 @@ body {
   color: #ffffff;
 }
 
-// .my-style__btn {
-//   border: 1px solid #007bff;
 
-//   background: transparent;
-//   color: #007bff;
-//   width: 100px;
-//   height: 36px;
-// }
-
-// .my-style__btn:hover {
-//   background: #007bff;
-// }
 
 .slider-tea {
   margin-top: 72px;
