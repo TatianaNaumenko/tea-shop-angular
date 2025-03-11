@@ -1,4 +1,4 @@
-import { TaaSearchService } from './services/taa-search.service';
+// import { TaaSearchService } from './services/taa-search.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -45,7 +45,7 @@ import { TeaDataService } from './services/tea-data.service';
   providers: [
     TeaCatalogService,
     TeaDataService,
-    TaaSearchService
+   
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import { TaaSearchService } from './../../../services/taa-search.service';
+
 import { TeaCatalogService } from './../../../services/tea-catalog.service';
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -16,38 +16,34 @@ export class CatalogComponent implements OnInit, OnDestroy {
   public teaCatalog: TeaCard[] = [];
   public isLoading: boolean = false;
   private subscriptionTeaCtalogService: Subscription | null = null;
-  teas: any[] = [];
-  title: string = 'Наши чайные коллекции';
+  private subscriptionQuertParams: Subscription | null = null;
+
+  filteredTeas: TeaCard[] = [];
+  searchQuery: string = '';
   constructor(private teaCatalogService: TeaCatalogService,
-    private router: Router, private teaSearchService: TaaSearchService, private route: ActivatedRoute
+    private router: Router, private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.isLoading = true;
     this.loadTeaCatalog();
-    // моё мучение
-    this.route.queryParams.subscribe(params => {
-      const searchQuery = params['search'] || '';
-      this.teaSearchService.getTeas(searchQuery).subscribe(teas => {
-        this.teas = teas;
-        console.log(teas)// нет ничего
-        this.updateTitle(searchQuery);
-      });
+
+    // Подписка на изменения параметра запроса
+    this.subscriptionQuertParams = this.route.queryParams.subscribe(params => {
+      this.searchQuery = params['search'] || '';
+      this.filterTeas();
     });
+
   }
 
-  updateTitle(searchQuery: string) {
-    this.title = searchQuery ? `Результаты поиска по запросу "${searchQuery}"` : 'Наши чайные коллекции';
-  }
+
 
   loadTeaCatalog(): void {
     this.subscriptionTeaCtalogService = this.teaCatalogService.getTeaCatalog()
-      // .pipe(
-      //   delay(2000)//..посмотреть на loader
-      // )
       .subscribe({
         next: (data: TeaCard[]) => {
           this.teaCatalog = data;
+          this.filterTeas();
           this.isLoading = false;
         },
         error: (error) => {
@@ -59,8 +55,21 @@ export class CatalogComponent implements OnInit, OnDestroy {
       );
   }
 
+  filterTeas() {
+    if (this.searchQuery) {
+      this.filteredTeas = this.teaCatalog.filter(tea =>
+        tea.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+
+      );
+      console.log(this.filteredTeas)
+    } else {
+      this.filteredTeas = this.teaCatalog; // Если нет запроса, показываем все товары
+    }
+  }
+
   ngOnDestroy() {
     this.subscriptionTeaCtalogService?.unsubscribe();
+    this.subscriptionQuertParams?.unsubscribe()
   }
 
 }

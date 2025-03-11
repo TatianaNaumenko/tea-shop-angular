@@ -1,4 +1,3 @@
-import { TaaSearchService } from './../../../services/taa-search.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,16 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-searchQuery:string = '';
-  constructor(private route:Router, private teaSearchService: TaaSearchService) { }
+  searchQuery: string = '';
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
   onSearch() {
     if (this.searchQuery) {
-      this.teaSearchService.setSearch(this.searchQuery)
+
       this.route.navigate(['/catalog'], { queryParams: { search: this.searchQuery.trim() } });
     }
   }
-
+  clearSearch() {
+    this.searchQuery = '';
+    this.route.navigate([], { queryParams: { search: null } });
+  }
 }

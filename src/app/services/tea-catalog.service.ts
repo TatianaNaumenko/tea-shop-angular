@@ -2,32 +2,24 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TeaCard } from '../types/tea-card.type';
+import { OrderData } from '../types/order-data.type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TeaCatalogService {
-  private apiUrl = 'https://testologia.ru/tea';
+  private apiUrl = 'https://testologia.ru';
 
   constructor(private http: HttpClient) { }
 
   getTeaCatalog(): Observable<TeaCard[]> {
 
-    return this.http.get<TeaCard[]>(this.apiUrl);
+    return this.http.get<TeaCard[]>(this.apiUrl + '/tea');
   }
   getTeaDetails(id: number): Observable<TeaCard> {
-    return this.http.get<TeaCard>(`${this.apiUrl}?id=${id}`);
+    return this.http.get<TeaCard>(`${this.apiUrl}/tea?id=${id}`);
   }
-  createOrder(data: {
-    name: string,
-    last_name: string,
-    phone: string,
-    country: string,
-    zip: string,
-    product: string,
-    address: string,
-    comment: string
-  }) {
-    return this.http.post<{ success: boolean, message?: string }>(`https://testologia.ru/order-tea`, data);
+  createOrder(data: OrderData) {
+    return this.http.post<{ success: boolean, message?: string }>(`${this.apiUrl}/order-tea`, data);
   }
 }

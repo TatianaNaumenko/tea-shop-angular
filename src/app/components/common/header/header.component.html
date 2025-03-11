@@ -25,6 +25,7 @@
               <input class="form-control me-2" type="search" placeholder="Поиск чая" aria-label="Search"
               [(ngModel)]="searchQuery" name="searchQuery" required>
               <button class="my-style__btn btn btn-outline-success" type="button" (click)="onSearch()">Найти</button>
+              <button class="my-style__btn btn btn-outline-danger " type="button" (click)="clearSearch()">Сбросить</button>
            </form>
         </div>
      </div>

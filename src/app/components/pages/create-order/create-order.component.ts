@@ -1,7 +1,8 @@
-import { TeaCatalogService } from 'src/app/services/tea-catalog.service';
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { TeaCatalogService } from 'src/app/services/tea-catalog.service';
 import { TeaDataService } from 'src/app/services/tea-data.service';
 import { TeaCard } from 'src/app/types/tea-card.type';
 
@@ -29,12 +30,12 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
     this.orderForm = this.fb.group({
       product: [{ value: '', disabled: true }],
       comment: [''],
-      name: ['', [Validators.required, lettersOnlyValidator()]], // Исправлено на массив
-      last_name: ['', [Validators.required, lettersOnlyValidator()]], // Исправлено на массив
+      name: ['', [Validators.required, lettersOnlyValidator()]], 
+      last_name: ['', [Validators.required, lettersOnlyValidator()]],
       phone: ['', [Validators.required, phoneValidator()]],
       country: ['', [Validators.required, lettersOnlyValidator()]],
       zip: ['', Validators.required],
-      address: ['', [Validators.required, addressValidator()]] // Исправлено на массив
+      address: ['', [Validators.required, addressValidator()]]
     });
     this.teaCard = this.teaDataService.getTeaCard();
     if (this.teaCard) {
